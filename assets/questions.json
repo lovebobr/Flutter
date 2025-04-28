@@ -1,0 +1,214 @@
+[
+    {
+        "code": "development_centers_count",
+        "title": "Сколько центров разработки в компании Neoflex?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "6"
+            },
+            {
+                "code": "B",
+                "title": "7"
+            },
+            {
+                "code": "C",
+                "title": "8"
+            },
+            {
+                "code": "D",
+                "title": "9"
+            }
+        ],
+        "multiple": false,
+        "answer": "C"
+    },
+    {
+        "code": "spring_launch_2025_directions",
+        "title": "Сколько направлений открыто в весеннем запуске учебного центра 2025г?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "7"
+            },
+            {
+                "code": "B",
+                "title": "8"
+            },
+            {
+                "code": "C",
+                "title": "9"
+            },
+            {
+                "code": "D",
+                "title": "10"
+            }
+        ],
+        "multiple": false,
+        "answer": "B"
+    },
+    {
+        "code": "training_duration_weeks",
+        "title": "Сколько длится обучение в учебном центре?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "3 недели"
+            },
+            {
+                "code": "B",
+                "title": "1.5 месяца"
+            },
+            {
+                "code": "C",
+                "title": "3.5 месяца"
+            },
+            {
+                "code": "D",
+                "title": "6 месяцев"
+            }
+        ],
+        "multiple": false,
+        "answer": "C"
+    },
+    {
+        "code": "training_programs",
+        "title": "По какой программе не обучают в учебном центре?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "Data\nEngineer"
+            },
+            {
+                "code": "B",
+                "title": "Application\nsecurity"
+            },
+            {
+                "code": "C",
+                "title": "System\nEngineer"
+            },
+            {
+                "code": "D",
+                "title": "Marketing"
+            }
+        ],
+        "multiple": false,
+        "answer": "D"
+    },
+    {
+        "code": "employee_count",
+        "title": "Количество сотрудников в компании Neoflex?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "800+"
+            },
+            {
+                "code": "B",
+                "title": "1200"
+            },
+            {
+                "code": "C",
+                "title": "2000"
+            },
+            {
+                "code": "D",
+                "title": "1400+"
+            }
+        ],
+        "multiple": false,
+        "answer": "D"
+    },
+    {
+        "code": "training_type",
+        "title": "Тип обучения в учебном центре Neoflex?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "Платное"
+            },
+            {
+                "code": "B",
+                "title": "Предоставляются скидки студентам"
+            },
+            {
+                "code": "C",
+                "title": "Бесплатное, в случае дальнейшего трудоустройства в компанию"
+            },
+            {
+                "code": "D",
+                "title": "Бесплатное"
+            }
+        ],
+        "multiple": false,
+        "answer": "D"
+    },
+    {
+        "code": "office_city",
+        "title": "Город, где нет офиса компании?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "Пенза"
+            },
+            {
+                "code": "B",
+                "title": "Самара"
+            },
+            {
+                "code": "C",
+                "title": "Сочи"
+            },
+            {
+                "code": "D",
+                "title": "Саратов"
+            }
+        ],
+        "multiple": false,
+        "answer": "C"
+    },
+    {
+        "code": "company_age",
+        "title": "Возраст компании Neoflex?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "5"
+            },
+            {
+                "code": "B",
+                "title": "10"
+            },
+            {
+                "code": "C",
+                "title": "15"
+            },
+            {
+                "code": "D",
+                "title": "20"
+            }
+        ],
+        "multiple": false,
+        "answer": "D"
+    },
+    {
+        "code": "desire_to_join_team",
+        "title": "Желание стать частью команды Neoflex?",
+        "answers": [
+            {
+                "code": "A",
+                "title": "Да"
+            },
+            {
+                "code": "B",
+                "title": "Конечно"
+            },
+            {
+                "code": "C",
+                "title": "Возможно"
+            }
+        ],
+        "multiple": false,
+        "answer": "B"
+    }
+]
