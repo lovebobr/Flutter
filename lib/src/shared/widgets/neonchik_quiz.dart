@@ -13,6 +13,10 @@ import 'neon_anim_2.dart';
 import 'neon_anim_3.dart';
 import 'neon_anim_4.dart';
 import 'neonchik_quiz_header.dart';
+import '../../../../monet_provider.dart';
+import 'package:provider/provider.dart';
+
+
 
 class NeonchikQuiz extends StatefulWidget {
   const NeonchikQuiz({
@@ -20,8 +24,13 @@ class NeonchikQuiz extends StatefulWidget {
     required this.title,
     required this.answers,
     this.timeToShowAnswer = const Duration(seconds: 1),
+    this.onEarnMoney, // <-- новое поле
     super.key,
+
   });
+
+  final void Function(int value)? onEarnMoney;
+
 
   final String title;
   final List<QuizDTOAnswer> answers;
@@ -179,6 +188,7 @@ class _NeonchikQuizState extends State<NeonchikQuiz> with TickerProviderStateMix
       await player.stop();
       await player.play(AssetSource('audio/win.wav'));
 
+
       if (!mounted) return;
       setState(() {
         congratulation = true;
@@ -186,6 +196,7 @@ class _NeonchikQuizState extends State<NeonchikQuiz> with TickerProviderStateMix
 
       await Future.delayed(const Duration(seconds: 2));
       if (mounted) {
+        context.read<MonetProvider>().addMoney(50);
         Navigator.pop(context, true); // <-- Вернуть результат: ответ правильный
       }
     } else {

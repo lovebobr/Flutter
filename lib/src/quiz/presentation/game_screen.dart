@@ -17,20 +17,20 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
   final double cardSize = 150.0; // Размер карточки (можно регулировать)
 
   // Пути к изображениям
-  final String cardBackImage = 'assets/images/xxxx.jpg';
-  final String backgroundImage = 'assets/images/robo.jpg';
-  final String titleImage = 'assets/images/neonchik.png';
+  final String cardBackImage = 'assets/ui/xxxx.jpg';
+  final String backgroundImage = 'assets/images/photo.jpg';
+  final String titleImage = 'assets/images/neonchiktwo.png';
 
   // Список изображений для карточек
   final List<String> imagePaths = [
-    'assets/images/xxx.jpg',
-    'assets/images/neonchik.png',
-    'assets/images/xxxx.jpg',
-    'assets/images/dog2.jpg',
-    'assets/images/bird1.jpg',
-    'assets/images/bird2.jpg',
-    'assets/images/fish1.jpg',
-    'assets/images/fish2.jpg',
+    'assets/images/imagef.png',
+    'assets/images/imagetwo.png',
+    'assets/images/imagetw.png',
+    'assets/images/imagefi.png',
+    'assets/images/imagefir.png',
+    'assets/images/imagefirs.png',
+    'assets/images/imagefirst.png',
+    'assets/images/imaget.png',
   ];
 
   @override
@@ -162,7 +162,7 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
                     fontFamily: 'YourFontName', // Укажите имя шрифта из pubspec.yaml
                     fontSize: 18, // Размер шрифта
                     fontWeight: FontWeight.bold, // Жирность
-                    color: Colors.white, // Цвет текста
+                    color: Colors.purple, // Цвет текста
                   ),
                 ),
               ),
@@ -264,7 +264,7 @@ class CardWidget extends StatelessWidget {
         curve: Curves.easeInOut,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
-          border: Border.all(color: Colors.black, width: 2.0),
+          border: Border.all(color: Colors.white, width: 2.0),
         ),
         child: card.isMatched
             ? null
