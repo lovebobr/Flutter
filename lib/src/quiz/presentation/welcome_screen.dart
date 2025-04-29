@@ -130,20 +130,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                       SizedBox(height: screenSize.height * 0.015),
 
-                      // Кнопка "Выход"
-                      GestureDetector(
-                        onTapDown: (_) => setState(() => _scaleExit = 0.9),
-                        onTapUp: (_) => setState(() => _scaleExit = 1.0),
-                        onTapCancel: () => setState(() => _scaleExit = 1.0),
-                        child: AnimatedScale(
-                          duration: Duration(milliseconds: 100),
-                          scale: _scaleExit,
-                          child: Image.asset(
-                            'assets/ui/exit.png',
-                            width: MediaQuery.of(context).size.width * 0.5,
-                          ),
-                        ),
-                      ),
+
 
 
                     ],

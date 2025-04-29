@@ -5,7 +5,9 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import '../../../provider/user_progress_provider.dart';
 import '../../quiz/domain/_domain.dart';
+import '../../quiz/presentation/congratulations_page.dart';
 import 'level_path_page.dart';
 import 'lottie_animation.dart';
 import 'neon_anim_1.dart';
@@ -188,16 +190,27 @@ class _NeonchikQuizState extends State<NeonchikQuiz> with TickerProviderStateMix
       await player.stop();
       await player.play(AssetSource('audio/win.wav'));
 
+      // Обновляем прогресс пользователя
+      context.read<UserProgressProvider>().levelCompleted();
 
-      if (!mounted) return;
-      setState(() {
-        congratulation = true;
-      });
-
-      await Future.delayed(const Duration(seconds: 2));
-      if (mounted) {
-        context.read<MonetProvider>().addMoney(50);
-        Navigator.pop(context, true); // <-- Вернуть результат: ответ правильный
+      // Проверяем, прошел ли пользователь все уровни
+      if (context.read<UserProgressProvider>().hasCompletedAllLevels()) {
+        // Если все уровни пройдены, показываем поздравления
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CongratulationsPage(),
+          ),
+        );
+      } else {
+        setState(() {
+          congratulation = true;
+        });
+        await Future.delayed(const Duration(seconds: 2));
+        if (mounted) {
+          context.read<MonetProvider>().addMoney(50);
+          Navigator.pop(context, true);
+        }
       }
     } else {
       await player.stop();
@@ -218,7 +231,7 @@ class _NeonchikQuizState extends State<NeonchikQuiz> with TickerProviderStateMix
 
       await Future.delayed(const Duration(seconds: 2));
       if (mounted) {
-        Navigator.pop(context, false); // <-- Вернуть результат: ответ неправильный
+        Navigator.pop(context, false);
       }
     }
   }

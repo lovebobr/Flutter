@@ -5,6 +5,9 @@ import '../../quiz/presentation/game_screen.dart';
 import '../../quiz/presentation/question_screen.dart';
 import '../../../../monet_provider.dart';
 import 'package:provider/provider.dart';
+import '../../quiz/presentation/welcome_screen.dart';
+import '../../quiz/shop/shop_screen.dart';
+import 'package:neoflex/provider/user_progress_provider.dart';
 
 import 'info_page.dart';
 
@@ -18,6 +21,8 @@ class _LevelPathScreenState extends State<LevelPathScreen> with TickerProviderSt
   late List<Offset> _points;
   late RobotMovementController _robotController;
   Offset _robotPosition = Offset.zero;
+
+  final double _scaleShop = 1.0;
 
   int _lives = 3;
   bool _robotControllerIsReady = false;
@@ -88,6 +93,22 @@ class _LevelPathScreenState extends State<LevelPathScreen> with TickerProviderSt
             child: Image.asset(
               'assets/images/begin.jpg',
               fit: BoxFit.cover,
+            ),
+          ),
+
+          Positioned(
+            top: 20,
+            right: 95,
+            child: _buildAnimatedButton(
+              iconPath: 'assets/ui/shop.png', // Путь к картинке магазина
+              scale: _scaleShop,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ShopScreen()),
+                );
+              },
+              tapDownScale: 0.9,
             ),
           ),
 
@@ -324,10 +345,18 @@ class _LevelPathScreenState extends State<LevelPathScreen> with TickerProviderSt
           setState(() {
             _tappedIndex = previousLevel;
           });
+        } else {
+          if (_lives == 0) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => WelcomeScreen()),
+            );
+          }
         }
       }
     });
   }
+
 
   Future<void> _navigateToGameScreen(BuildContext context) async {
     await Navigator.push(

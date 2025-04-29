@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:neoflex/provider/user_progress_provider.dart';
 import 'package:provider/provider.dart';
-import 'src/quiz/presentation/welcome_screen.dart'; // <-- путь до твоего WelcomeScreen
+import 'src/quiz/presentation/welcome_screen.dart';
 import 'monet_provider.dart';
 
 void main() {
   runApp(
     ChangeNotifierProvider(
       create: (_) => MonetProvider(),
-      child: const MyApp(),
+      child: ChangeNotifierProvider(
+        create: (_) => UserProgressProvider(),
+        child: const MyApp(),
+      ),
     ),
   );
 }
